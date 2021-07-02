@@ -6,10 +6,20 @@
         xmlns:local="clr-namespace:RabbitMQUtilityMessenger"
         mc:Ignorable="d"
         Title="RabbitMQ Utility Messenger" Height="450" Width="750">
-    <Grid>
-        <Border Background="#E6E6E6"/>
-        <Button Content="Button" Margin="604,375,25,10" Background="#FFFFFF"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,26,0,0" Text="InsertMessage" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" Height="319"/>
+    <Grid Margin="15">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="messageBox" Grid.ColumnSpan="3" Background="#E9E2E6" Text="InsertMessage" TextWrapping="Wrap"/>
+        <Button x:Name="sendButton" Content="Send" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" Width="122"/>
 
     </Grid>
 </Window>
