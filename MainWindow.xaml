@@ -1,0 +1,15 @@
+﻿<Window x:Class="RabbitMQUtilityMessenger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RabbitMQUtilityMessenger"
+        mc:Ignorable="d"
+        Title="RabbitMQ Utility Messenger" Height="450" Width="750">
+    <Grid>
+        <Border Background="#E6E6E6"/>
+        <Button Content="Button" Margin="604,375,25,10" Background="#FFFFFF"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,26,0,0" Text="InsertMessage" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" Height="319"/>
+
+    </Grid>
+</Window>
