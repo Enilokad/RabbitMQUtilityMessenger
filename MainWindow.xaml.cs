@@ -1,4 +1,5 @@
 ﻿using System;
+using RabbitMQ.Client;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace RabbitMQUtilityMessenger
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonSend_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
