@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace RabbitMQUtilityMessenger
 {
+
     public class Rabbit
     {
         public static void SendMessage(string queue, string data)
@@ -40,13 +41,19 @@ namespace RabbitMQUtilityMessenger
         public MainWindow()
         {
             InitializeComponent();
-            ConnectionFactory connectionFactory = new ConnectionFactory();
-            IConnection connection = connectionFactory.CreateConnection();
         }
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
-            Rabbit.SendMessage("first", "TestTsetTest123");
+            if (String.IsNullOrEmpty(messageBox.Text))
+            {
+                //something here
+            }
+            else 
+            {
+                Rabbit.SendMessage("first", messageBox.Text);
+            }
+            
         }
     }
 }
