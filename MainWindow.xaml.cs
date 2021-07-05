@@ -47,10 +47,11 @@ namespace RabbitMQUtilityMessenger
         {
             if (String.IsNullOrEmpty(messageBox.Text))
             {
-                //something here
+                validationPopup.IsOpen = true;
             }
             else 
             {
+                validationPopup.IsOpen = false;
                 Rabbit.SendMessage("first", messageBox.Text);
             }
             

@@ -17,7 +17,15 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        
+        <Popup Name="validationPopup">
+            <TextBlock Name="validationPopupText" 
+                 Background="White" 
+                 Foreground="Red">
+        Popup Text
+            </TextBlock>
+        </Popup>
+        
         <TextBox x:Name="messageBox" Grid.ColumnSpan="3" Background="#E9E2E6" Text="InsertMessage" TextWrapping="Wrap"/>
         <Button x:Name="sendButton" Content="Send" Click="ButtonSend_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" Width="122"/>
 
