@@ -47,12 +47,12 @@ namespace RabbitMQUtilityMessenger
         {
             if (String.IsNullOrEmpty(messageBox.Text))
             {
-                validationPopup.IsOpen = true;
+                validationBox.Visibility = Visibility.Visible;
             }
             else 
             {
-                validationPopup.IsOpen = false;
-                Rabbit.SendMessage("first", messageBox.Text);
+                validationBox.Visibility = Visibility.Hidden;
+                Rabbit.SendMessage("queue1", messageBox.Text);
             }
             
         }
