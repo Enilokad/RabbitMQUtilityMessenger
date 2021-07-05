@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 namespace RabbitMQUtilityMessenger
 {
-    public class RabbitSend
+    public class Rabbit
     {
         public static void SendMessage()
         {
@@ -59,7 +59,7 @@ namespace RabbitMQUtilityMessenger
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
-            RabbitSend.SendMessage();
+            Rabbit.SendMessage();
         }
     }
 }
