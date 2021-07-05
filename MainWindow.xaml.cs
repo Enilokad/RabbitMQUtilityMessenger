@@ -45,6 +45,7 @@ namespace RabbitMQUtilityMessenger
 
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
+            //validation
             if (String.IsNullOrEmpty(messageBox.Text))
             {
                 validationBox.Visibility = Visibility.Visible;
@@ -53,7 +54,6 @@ namespace RabbitMQUtilityMessenger
             {
                 validationBox.Visibility = Visibility.Hidden;
                 Rabbit.SendMessage("queue1", messageBox.Text);
-                //check
             }
             
         }
