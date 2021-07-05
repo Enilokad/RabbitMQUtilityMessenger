@@ -53,6 +53,7 @@ namespace RabbitMQUtilityMessenger
             {
                 validationBox.Visibility = Visibility.Hidden;
                 Rabbit.SendMessage("queue1", messageBox.Text);
+                //check
             }
             
         }
