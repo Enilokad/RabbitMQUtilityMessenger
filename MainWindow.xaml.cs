@@ -22,7 +22,7 @@ namespace RabbitMQUtilityMessenger
     {
         public static void SendMessage(string queue, string data)
         {
-            using (IConnection connection = new ConnectionFactory().CreateConnection())
+            using (IConnection connection = new ConnectionFactory() { HostName = "localhost" }.CreateConnection())
             {
                 using (IModel channel = connection.CreateModel())
                 {
@@ -46,7 +46,7 @@ namespace RabbitMQUtilityMessenger
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
             //validation
-            if (String.IsNullOrEmpty(messageBox.Text))
+            if (string.IsNullOrEmpty(messageBox.Text))
             {
                 validationBox.Visibility = Visibility.Visible;
             }
