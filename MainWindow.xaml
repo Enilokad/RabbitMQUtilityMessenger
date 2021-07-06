@@ -19,7 +19,7 @@
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="messageBox" Grid.ColumnSpan="3" Background="#E9E2E6" Text="InsertMessage" TextWrapping="Wrap"/>
+        <TextBox x:Name="messageBox" Grid.ColumnSpan="3" Background="#E9E2E6" Text="InsertMessage" TextWrapping="Wrap" AcceptsReturn="True"/>
         <Button x:Name="sendButton" Content="Send" Click="ButtonSend_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" Width="122"/>
         <TextBox x:Name="validationBox" Visibility= "Hidden" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Text="Blank message cannot be sent." TextWrapping="Wrap" Foreground="Red"/>
 
