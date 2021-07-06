@@ -60,7 +60,7 @@ namespace RabbitMQUtilityMessenger
                 validationBox.Visibility = Visibility.Hidden;
                 Rabbit.SendMessage(exchangeBox.Text, routingKeyBox.Text, messageBox.Text);
             }
-            
+
         }
     }
 }
