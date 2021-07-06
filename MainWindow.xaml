@@ -21,7 +21,11 @@
 
         <TextBox x:Name="messageBox" Grid.ColumnSpan="3" Background="#E9E2E6" Text="InsertMessage" TextWrapping="Wrap" AcceptsReturn="True"/>
         <Button x:Name="sendButton" Content="Send" Click="ButtonSend_Click" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="65" Width="122"/>
-        <TextBox x:Name="validationBox" Visibility= "Hidden" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Text="Blank message cannot be sent." TextWrapping="Wrap" Foreground="Red"/>
+        <TextBox x:Name="validationBox" Visibility= "Hidden" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Text="Elements cannot contain white spaces." TextWrapping="Wrap" Foreground="Red"/>
+        <TextBox x:Name="routingKeyBox" Background="LightGreen" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" Text="defaultRouting" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="40"/>
+        <TextBox x:Name="exchangeBox" Background="LightBlue" HorizontalAlignment="Center" Grid.Row="1" Text="defaultExchange" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="40"/>
+        <Label Content="exchange" HorizontalAlignment="Center" Margin="0,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="62"/>
+        <Label Content="routingKey" Grid.Column="1" HorizontalAlignment="Center" Margin="0,77,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -20,14 +20,19 @@ namespace RabbitMQUtilityMessenger
 
     public class Rabbit
     {
-        public static void SendMessage(string queue, string data)
+        public static void SendMessage(string chosenExchange, string chosenRoutingKey, string message)
         {
-            using (IConnection connection = new ConnectionFactory() { HostName = "localhost" }.CreateConnection())
             {
-                using (IModel channel = connection.CreateModel())
+                var factory = new ConnectionFactory() { HostName = "localhost" };
+                using (var connection = factory.CreateConnection())
+                using (var channel = connection.CreateModel())
                 {
-                    channel.QueueDeclare(queue, false, false, false, null);
-                    channel.BasicPublish(string.Empty, queue, null, Encoding.UTF8.GetBytes(data));
+                    channel.ExchangeDeclare(exchange: chosenExchange, type: "direct");
+
+                    channel.BasicPublish(exchange: chosenExchange,
+                                         routingKey: chosenRoutingKey,
+                                         basicProperties: null,
+                                         body: Encoding.UTF8.GetBytes(message));
                 }
             }
         }
@@ -46,14 +51,14 @@ namespace RabbitMQUtilityMessenger
         private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
             //validation
-            if (string.IsNullOrWhiteSpace(messageBox.Text))
+            if (string.IsNullOrWhiteSpace(exchangeBox.Text) | string.IsNullOrWhiteSpace(routingKeyBox.Text) | string.IsNullOrWhiteSpace(messageBox.Text))
             {
                 validationBox.Visibility = Visibility.Visible;
             }
-            else 
+            else
             {
                 validationBox.Visibility = Visibility.Hidden;
-                Rabbit.SendMessage("queue1", messageBox.Text);
+                Rabbit.SendMessage(exchangeBox.Text, routingKeyBox.Text, messageBox.Text);
             }
             
         }
