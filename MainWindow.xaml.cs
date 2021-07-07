@@ -17,9 +17,14 @@ using System.Windows.Shapes;
 
 namespace RabbitMQUtilityMessenger
 {
-
+    /// <summary>
+    /// Class that allows interaction with RabbitMQ.
+    /// </summary>
     public class Rabbit
     {
+        /// <summary>
+        /// Method that creates RabbitMQ connection and sends message to the exchange.
+        /// </summary>
         public static void SendMessage(string chosenExchange, string chosenRoutingKey, string message)
         {
             {
